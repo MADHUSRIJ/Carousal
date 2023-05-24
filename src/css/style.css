@@ -1,84 +1,70 @@
-body{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: space-evenly;
+html, body {
+  caret-color: transparent;
+}
+
+.colorpicker{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
 }
 
 .carousel {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .carousel-container {
-  padding: 50px;
+  width: 90vw;
+  height: 80vh;
+  padding-top: 16px;
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  background-color: #9f9f4b75;
 }
 
 .Back, .forward {
   cursor: pointer;
-  position: absolute;
-  top: 48%;
   width: auto;
-  margin-top: -23px;
   padding: 17px;
   color: grey;
   font-weight: bold;
   font-size: 19px;
   transition: 0.4s ease;
-  border-radius: 0 5px 5px 0;
-  user-select: none;
-}
-
-.forward {
-  right: 0;
-  transform: translateX(200%);
   border-radius: 4px 0 0 4px;
-}
-
-.Back{
-  transform: translateX(-200%);
+  user-select: none;
 }
 
 .Back:hover, .forward:hover {
   background-color: rgba(0,0,0,0.8);
 }
 
-.Info {
-  color: #e3e3e3;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-size: 16px;
-  padding: 10px 14px;
-  position: absolute;
-  bottom: 10px;
-  left: 50px;
-  width: 80%;
-  text-align: center;
-}
-
-.MessageInfo {
-  color: black;
-  font-size: 14px;
-  padding: 10px 14px;
-  position: absolute;
-  top: 0;
+.forward {
+  border-radius:  0 5px 5px 0;
 }
 
 .dots {
   cursor: pointer;
   height: 16px;
   width: 16px;
-  margin: 0 3px;
+  margin: 20px 3px;
   background-color: #acc;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.5s ease;
 }
 
-.enable, .dots:hover {
+.enable {
   background-color: #717161;
+}
+
+.dots:hover{
+  background-color: rgb(94, 179, 179);
 }
 
 .fade {
@@ -86,6 +72,48 @@ body{
   -webkit-animation-duration: 1.4s;
   animation-name: fade;
   animation-duration: 1.4s;
+}
+
+.content{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left, .right{
+  height: 67vh;
+  width: 45vw;
+}
+
+.left{
+  background-color: rgba(255, 255, 255, 0.429);
+  border-radius: 0px 200px 200px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgba(55, 74, 185, 0.466);
+}
+
+input[type='text']{
+  height: 30px;
+  width: 200px;
+  border: none;
+  padding: 0px 10px;
+}
+
+input[type='color']{
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  border: none;
 }
 
 @-webkit-keyframes fade {

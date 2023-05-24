@@ -1,33 +1,24 @@
-let colorInput = document.querySelector('#color');
-let hexInput = document.querySelector('#hex');
 var slidePosition = 1;
 var slides = document.getElementsByClassName("carousel-container");
-
-colorInput.addEventListener('input', () => {
-    let color = colorInput.value;
-    hexInput.value = color;
-    
-    slides[slidePosition-1].style.backgroundColor = colorInput.value;
-});
+var colorArray = ['#fff','#fff','#fff','#fff','#fff'];
 
 SlideShow(slidePosition);
 
 function plusSlides(n) {
-  hexInput.value = slides[slidePosition-1].style.backgroundColor;
-  colorInput.value = slides[slidePosition-1].style.backgroundColor;
   SlideShow(slidePosition += n);
 }
 
 function currentSlide(n) {
-    hexInput.value = "";
-    colorInput.value = "";
   SlideShow(slidePosition = n);
 }
 
 function SlideShow(n) {
+  
+  document.body.style.backgroundColor = colorArray[n-1];
   var i;
   var slides = document.getElementsByClassName("carousel-container");
   var circles = document.getElementsByClassName("dots");
+
   if (n > slides.length) {
     slidePosition = 1;
   }
@@ -41,7 +32,21 @@ function SlideShow(n) {
   for (i = 0; i < circles.length; i++) {
       circles[i].className = circles[i].className.replace(" enable", "");
   }
-  slides[slidePosition-1].style.display = "block";
+  slides[slidePosition-1].style.display = "flex";
   circles[slidePosition-1].className += " enable";
+
+  
+  let pickerElement = document.getElementsByClassName('colorpicker')[n - 1];
+  let colorInput = pickerElement.querySelector('#color' + n);
+  let hexInput = pickerElement.querySelector('#hex' + n);
+
+  colorInput.addEventListener('input', () => {
+    let color = colorInput.value;
+    hexInput.value = color;
+    colorArray[n-1] = color;
+    document.body.style.backgroundColor = color;
+  });
+
+  
 } 
   
