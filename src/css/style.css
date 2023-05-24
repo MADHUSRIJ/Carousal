@@ -13,6 +13,7 @@ body{
 }
 
 .carousel-container {
+  padding: 50px;
   display: none;
 }
 
@@ -58,7 +59,7 @@ body{
 }
 
 .MessageInfo {
-  color: #f2f2f3;
+  color: black;
   font-size: 14px;
   padding: 10px 14px;
   position: absolute;
