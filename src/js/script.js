@@ -14,7 +14,7 @@ function currentSlide(n) {
 
 function SlideShow(n) {
   
-  document.body.style.backgroundColor = colorArray[n-1];
+ 
   var i;
   var slides = document.getElementsByClassName("carousel-container");
   var circles = document.getElementsByClassName("dots");
@@ -26,6 +26,7 @@ function SlideShow(n) {
   if (n < 1) {
     slidePosition = slides.length
   }
+  document.body.style.backgroundColor = colorArray[slidePosition-1];
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
@@ -36,14 +37,15 @@ function SlideShow(n) {
   circles[slidePosition-1].className += " enable";
 
   
-  let pickerElement = document.getElementsByClassName('colorpicker')[n - 1];
-  let colorInput = pickerElement.querySelector('#color' + n);
-  let hexInput = pickerElement.querySelector('#hex' + n);
+  let pickerElement = document.getElementsByClassName('colorpicker')[slidePosition - 1];
+  let colorInput = pickerElement.querySelector('#color' + slidePosition);
+  let hexInput = pickerElement.querySelector('#hex' + slidePosition);
 
   colorInput.addEventListener('input', () => {
     let color = colorInput.value;
     hexInput.value = color;
-    colorArray[n-1] = color;
+    colorArray[slidePosition-1] = color;
+    console.log(slidePosition);
     document.body.style.backgroundColor = color;
   });
 
