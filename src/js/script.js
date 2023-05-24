@@ -1,19 +1,20 @@
 let colorInput = document.querySelector('#color');
 let hexInput = document.querySelector('#hex');
 var slidePosition = 1;
+var slides = document.getElementsByClassName("carousel-container");
 
 colorInput.addEventListener('input', () => {
     let color = colorInput.value;
     hexInput.value = color;
-    var slides = document.getElementsByClassName("carousel-container");
+    
     slides[slidePosition-1].style.backgroundColor = colorInput.value;
 });
 
 SlideShow(slidePosition);
 
 function plusSlides(n) {
-  hexInput.value = "";
-  colorInput.value = "";
+  hexInput.value = slides[slidePosition-1].style.backgroundColor;
+  colorInput.value = slides[slidePosition-1].style.backgroundColor;
   SlideShow(slidePosition += n);
 }
 
