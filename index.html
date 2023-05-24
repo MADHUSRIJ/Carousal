@@ -4,14 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousal with Color Picker</title>
+    <title>Carousel with Color Picker</title>
     <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
-    <div>
+    
+    <div class="colorpicker">
         <input type="text" id="hex">
         <input type="color" id="color">
     </div>
+    
+    <div class="main">
+        
+    <div class="carousel fade">
+        <div class="carousel-container">
+            <div class="MessageInfo">1 / 5</div>
+            <img src="https://i.pinimg.com/564x/24/ae/3a/24ae3aa71045d773c18a5691b906c25b.jpg" style="width:100%">
+            <div class="Info">Penny and Leonard</div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="MessageInfo">2 / 5</div>
+            <img src="https://i.pinimg.com/564x/70/d3/60/70d3600b80d401864dabba9df50ecae2.jpg" style="width:100%">
+            <div class="Info">The Girls</div>
+        </div>
+    
+        <div class="carousel-container">
+            <div class="MessageInfo">3 / 5</div>
+            <img src="https://i.pinimg.com/564x/24/17/bd/2417bd5ac575637f9addc4bc372825d2.jpg" style="width:100%">
+            <div class="Info">After Arctic Pole Experiment</div>
+        </div>
+    
+        <div class="carousel-container">
+            <div class="MessageInfo">4 / 5</div>
+            <img src="https://i.pinimg.com/564x/6d/67/d8/6d67d8d61b8d8f60aef4b392d5e11a21.jpg" style="width:100%">
+            <div class="Info">Sheldon after break up with Amy</div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="MessageInfo">5 / 5</div>
+            <img src="https://i.pinimg.com/564x/5e/d9/2d/5ed92dc9dcf6d86f24f79a05dc8648bb.jpg" style="width:100%">
+            <div class="Info">Sheldon and Penny Shopping</div>
+        </div>
+    
+        <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+        <span class="dots" onclick="currentSlide(4)"></span>
+        <span class="dots" onclick="currentSlide(5)"></span>
+    </div> 
+    </div>
+
     <script type="text/javascript" src="src/js/script.js"></script>
 </body>
 </html>
